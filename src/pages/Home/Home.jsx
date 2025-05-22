@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import Product from "../../components/product";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Banner from "../../components/banner";
+import HomeSlider from "./Slider/HomeSlider";
+import CatSlider from "../../components/catSlider";
 
 // const products = [
 //   {
@@ -87,6 +90,9 @@ const Home = () => {
   return (
     <>
       <div className="dark:bg-gray-900">
+      <HomeSlider/>
+      <CatSlider/>
+      <Banner/>
         <section className="homeProducts">
           <div className="w-full px-4 md:px-8">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between ">
