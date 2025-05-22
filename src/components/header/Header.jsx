@@ -15,6 +15,7 @@ import Select from "../selectDrop/Select";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Nav from "./nav/Nav";
+import { categories } from "../../constants/categories";
 // import  {faMap, faUser  as user} from "@fortawesome/free-regular-svg-icons";
 
 const Header = () => {
@@ -22,19 +23,6 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const[loggedIn,setLoggedIn] = useState(true);
-
-  const categories = [
-    "Milk and Dairies",
-    "Clothing & Beauty",
-    "Fresh Seafood",
-    "Wines & Drinks",
-    "Pet Foods & Toy",
-    "Fast Food",
-    "Baking Material",
-    "Vegetables",
-    "Fresh Fruit",
-    "Bread and Juice",
-  ];
 
   useEffect(() => {
     const getCountry = async () => {
@@ -191,7 +179,8 @@ const Header = () => {
       </div>
       
     </header>
-    <Nav/>
+    
+    <Nav menuOpen={menuOpen}/>
     </>
   );
 };

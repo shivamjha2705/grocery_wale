@@ -14,14 +14,15 @@ import { Link } from "react-router-dom";
 import megaMenuImg from "../../../assets/banner-menu.png";
 import TiltWrapper from "../../TiltWrapper/TiltWrapper";
 
-const Nav = () => {
+const Nav = ({menuOpen }) => {
   const [isHovering, setIsHovering] = useState(false);
 
   const toggleHoverMenu = (hoverState) => {
     setIsHovering(hoverState);
   };
   return (
-    <nav className="flex flex-wrap w-full py-4 px-8 dark:bg-gray-900 border-y-gray-200 dark:border-y-gray-800 border-y-[1px]">
+    <nav className={`${
+        menuOpen ? "flex" : "hidden" } lg:flex flex-wrap w-full py-4 px-8 dark:bg-gray-900 border-y-gray-200 dark:border-y-gray-800 border-y-[1px]`}>
       <div className="w-full flex justify-between items-center">
         <div className="flex items-center">
           <button className="flex items-center gap-2 bg-[#31B55D] text-white hover:bg-[#2ca454] px-6 py-2 w-max capitalize rounded-md text-center transition-all">
